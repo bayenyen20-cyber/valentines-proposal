@@ -2,11 +2,5 @@
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "framework": "nextjs",
-  "env": {
-    "MONGODB_URI": {
-      "description": "MongoDB connection string",
-      "required": true
-    }
-  }
+  "framework": "nextjs"
 }
