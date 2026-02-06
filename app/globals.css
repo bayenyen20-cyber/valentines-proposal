@@ -3,8 +3,19 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
   body {
     @apply bg-gradient-to-br from-pink-50 via-rose-50 to-red-50;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
   }
 }
 

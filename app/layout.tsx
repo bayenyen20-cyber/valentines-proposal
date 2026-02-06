@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
 }
 
 export default function RootLayout({
@@ -22,6 +28,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${dancing.variable} font-sans antialiased`}>
         {children}
+        <footer className="text-center text-sm text-gray-500 py-4 mt-8">
+          Developed by Bryne Borinaga
+        </footer>
       </body>
     </html>
   )
