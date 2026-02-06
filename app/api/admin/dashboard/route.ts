@@ -51,9 +51,15 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     console.error('Error in admin dashboard:', error);
+    console.error('Error details:', errorMessage);
     return NextResponse.json(
-      { success: false, message: 'Failed to fetch dashboard data' },
+      { 
+        success: false, 
+        message: `Failed to fetch dashboard data: ${errorMessage}`,
+        error: process.env.NODE_ENV === 'development' ? errorMessage : undefined
+      },
       { status: 500 }
     );
   }
